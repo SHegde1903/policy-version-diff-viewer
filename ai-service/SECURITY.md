@@ -174,6 +174,52 @@ These risks are mitigated using fallback responses and error handling mechanisms
 | Member | Role | Date |
 |--------|------|------|
 | | AI Developer 2 | 18 Apr 2026 |
+
+---
+
+## Day 9 — Week 2 Security Sign-off
+**Date:** 24 April 2026
+**Tester:** AI Developer 2
+
+### 1. JWT Verification ✅
+| Check | Result |
+|-------|--------|
+| Health endpoint accessible | ✅ Pass |
+| /describe rejects empty body | ✅ Pass |
+| /recommend rejects empty body | ✅ Pass |
+| AiServiceClient.java exists | ✅ Pass |
+
+JWT Flow: React → Java (JWT validated) → Flask → Groq
+
+### 2. Rate Limit Verification ✅
+| Check | Result |
+|-------|--------|
+| First 30 requests return 200 | ✅ Pass |
+| Request 31+ returns 429 | ✅ Pass |
+| 429 has error message | ✅ Pass |
+
+### 3. Injection Verification ✅
+| Check | Result |
+|-------|--------|
+| 10 payloads blocked on /describe | ✅ Pass |
+| 10 payloads blocked on /recommend | ✅ Pass |
+| Clean text passes through | ✅ Pass |
+| HTML stripped not blocked | ✅ Pass |
+
+### 4. PII Audit ✅
+| Check | Result |
+|-------|--------|
+| describe_prompt.txt — no PII | ✅ Clean |
+| recommend_prompt.txt — no PII | ✅ Clean |
+| groq_client.py uses os.getenv() | ✅ Verified |
+| No hardcoded gsk_ key | ✅ Clean |
+| .env in .gitignore | ✅ Verified |
+| HTML PII stripping works | ✅ Verified |
+
+### Week 2 Sign-off: APPROVED ✅
+| Member | Role | Date |
+|--------|------|------|
+| | AI Developer 2 | 24 Apr 2026 |
 # Conclusion
 
 The AI service implements multiple layers of security including input validation, rate limiting, secure API key management, and controlled AI prompts. These measures reduce the likelihood of abuse while maintaining reliable AI functionality.
