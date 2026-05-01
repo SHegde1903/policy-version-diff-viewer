@@ -21,3 +21,7 @@ Rules:
 - action_type must be one of: UPDATE, REVIEW, REMOVE, ADD.
 - priority must be one of: High, Medium, Low.
 - Each description must be specific and actionable, not generic.
+
+CRITICAL: You MUST respond with ONLY a valid JSON array of exactly 3 objects.
+No text before or after the array.
+No markdown code fences.

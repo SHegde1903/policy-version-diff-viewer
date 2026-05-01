@@ -21,3 +21,8 @@ Rules:
 - If information is not present, use null for that field.
 - Keep summary under 100 words.
 - List exactly 3 key points.
+
+CRITICAL: You MUST respond with ONLY valid JSON.
+No text before or after the JSON object.
+No markdown code fences.
+No explanations.
