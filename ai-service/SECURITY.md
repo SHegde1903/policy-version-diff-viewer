@@ -220,6 +220,27 @@ JWT Flow: React → Java (JWT validated) → Flask → Groq
 | Member | Role | Date |
 |--------|------|------|
 | | AI Developer 2 | 24 Apr 2026 |
+
+---
+
+## Day 11 — E2E Container Security Verification
+
+### Docker Environment
+| Check | Result |
+|-------|--------|
+| AI service starts in Docker | ✅ |
+| Health endpoint returns 200 | ✅ |
+| Security headers present in container | ✅ |
+| Injection blocked in container | ✅ |
+| Rate limit enforced in container | ✅ |
+| GROQ_API_KEY set via environment variable | ✅ |
+| Redis connected | ✅ |
+| No secrets in Dockerfile | ✅ |
+
+### Sign-off
+| Member | Role | Date |
+|--------|------|------|
+| | AI Developer 2 | 28 Apr 2026 |
 # Conclusion
 
 The AI service implements multiple layers of security including input validation, rate limiting, secure API key management, and controlled AI prompts. These measures reduce the likelihood of abuse while maintaining reliable AI functionality.
